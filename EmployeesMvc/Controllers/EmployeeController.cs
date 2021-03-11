@@ -40,5 +40,14 @@ namespace EmployeesMvc.Controllers
         }
 
 
+        [Route("details/{id}")]
+        public IActionResult Detail(int id)
+        {
+
+            var emp =service.GetEmployeeById(id);
+            return View(emp);
+        }
+
+
     }
 }

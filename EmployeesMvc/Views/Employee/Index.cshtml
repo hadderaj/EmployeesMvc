@@ -14,13 +14,15 @@
         <ul>
             @foreach (var item in Model)
             {
-                <li>Name:@item.Name E-Mail:@item.Email</li>
+                <li>
+                    <a asp-controller="Employee" asp-action="Details" asp-route-id="@item.Id">Name:@item.Name E-Mail:@item.Email</a>
+                </li>
 
             }
-
+            
 
         </ul>
-
+        
         <a asp-controller="Employee" asp-action="Create">Create new employee</a>
 
     </div>
