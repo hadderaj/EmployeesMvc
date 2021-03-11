@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+</head>
+<body>
+    <h1>Acme InC</h1>
+    <ul>
+        <li><a asp-controller="Employee" asp-action="Create">Create Employee</a></li>
+        <li><a asp-controller="Employee" asp-action="Index">Index</a></li>
+    </ul>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <hr />
+        &copy; ACME
+    </footer>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>

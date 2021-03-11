@@ -41,7 +41,7 @@ namespace EmployeesMvc.Controllers
 
 
         [Route("details/{id}")]
-        public IActionResult Detail(int id)
+        public IActionResult Details(int id)
         {
 
             var emp =service.GetEmployeeById(id);
