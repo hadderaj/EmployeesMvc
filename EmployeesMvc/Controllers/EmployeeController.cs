@@ -9,7 +9,11 @@ namespace EmployeesMvc.Controllers
 {
     public class EmployeeController : Controller
     {
-        EmployeeService service = new EmployeeService();
+        EmployeeService service;
+        public EmployeeController(EmployeeService service)
+        {
+            this.service = service;
+        }
 
         [Route("")]
         public IActionResult Index()

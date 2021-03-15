@@ -7,8 +7,8 @@ namespace EmployeesMvc.Models
 {
     public class EmployeeService
     {
-        static List<Employee> employees = new List<Employee>();
-        static int employeeCount = 0;
+        List<Employee> employees = new List<Employee>();
+        int employeeCount = 0;
         public void AddEmployee(Employee employee)
         {
             employee.Id = employeeCount++;
