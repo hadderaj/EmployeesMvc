@@ -1,4 +1,4 @@
-﻿@model Employee
+﻿@model EmployeeCreateVM
 
 <form method="post">
 
@@ -9,6 +9,9 @@
     <label asp-for="Email"></label>
     <input asp-for="Email" />
     <span asp-validation-for="Email"></span>
+    <label asp-for="Botcheck"> What is 2+2?</label>
+    <input asp-for="Botcheck" />
+    <span asp-validation-for="Botcheck"></span>
     <br />
     <input type="Submit" value="Create" />
 

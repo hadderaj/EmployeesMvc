@@ -1,4 +1,6 @@
 ﻿using EmployeesMvc.Models;
+using EmployeesMvc.Models.Entities;
+using EmployeesMvc.Models.VirewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,39 +21,32 @@ namespace EmployeesMvc.Controllers
         public IActionResult Index()
         {
             var employess = service.GetAllEmployees();
-
             return View(employess);
         }
 
         [Route("createemployee")]
         [HttpGet]
-
         public IActionResult Create()
         {
             return View();
         }
         [Route("createemployee")]
         [HttpPost]
-        public IActionResult Create(Employee employee)
+        public IActionResult Create(EmployeeCreateVM employeeCreateVM)
         {
             if (!ModelState.IsValid)
             {
-                return View(employee);
+                return View(employeeCreateVM);
             }
-
-            service.AddEmployee(employee);
+            service.AddEmployee(employeeCreateVM);
             return RedirectToAction(nameof(Index));
         }
-
 
         [Route("details/{id}")]
         public IActionResult Details(int id)
         {
-
             var emp =service.GetEmployeeById(id);
             return View(emp);
         }
-
-
     }
 }

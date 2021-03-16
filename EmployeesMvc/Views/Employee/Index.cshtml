@@ -1,16 +1,33 @@
-﻿@model Employee[]
+﻿@model EmployeeIndexVM[]
 
 
-    <h1>List of Employees</h1>
-    <div>
-        <ul>
-            @foreach (var item in Model)
-            {
-                <li>
-                    <a asp-controller="Employee" asp-action="Details" asp-route-id="<bold>@item.Id">@item.Name @item.Email</a>
-                    <bold><partial name="_Timebox" model="DateTime.Now" /></bold>
-                </li>
-            }
-        </ul>
+<h1>List of Employees</h1>
 
-    </div>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a asp-controller="Employee" asp-action="Details" asp-route-id="@item.Id">@item.Name</a>
+            <br />
+        </li>
+        @if (item.ShowAsHighlighted == true)
+        {
+            <li style="color:red">
+                E-Mail: @item.Email
+            </li>
+
+        }
+        else
+        {
+            <li>  E-Mail: @item.Email </li>
+
+        }
+
+
+
+        <li>
+            <partial name="_Timebox" model="DateTime.Now" />
+        </li>
+    }
+</ul>
+
